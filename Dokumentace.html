@@ -1,35 +1,38 @@
 <!DOCTYPE html>
-<head>	                  
+<html lang="cs">
+<head>                    
   <title>Projekt - značkovací jazyky</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>	                  
-  <header><h1>Dokumentace semestrání práce</h1>	
+<body>                    
+  <header><h1>Dokumentace semestrání práce</h1> 
       <h2>Přeposílání objednávek</h2>                 
-  </header>	                  
-  <main>		                              
-    <section>			                                          
-      <article><h2>Menu</h2>				                                                      
-        <nav>					                                                                  
-          <ul>						                                                                              
-            <li>							                                                                              
-            <a href="#uvod">Úvod</a>						                                                                              
-            </li>						                                                                              
-            <li>							                                                                              
-            <a href="#metodika">Metodika</a>						                                                                              
-            </li>						                                                                              
-            <li>							                                                                              
-            <a href="#elementy">Elementy & atributy</a>						                                                                              
-            </li>						                                                                              
-            <li>							                                                                              
-            <a href="#transformace">Transformace</a>						                                                                              
-            </li>						                                                                              
-            <li>							                                                                              
-            <a href="#zaver">Závěr</a>						                                                                              
-            </li>					                                                                  
-          </ul>				                                                      
-        </nav>			                                          
-      </article>			                                          
-      <article id="uvod"><h2>Úvod</h2>				                                                      
+  </header>                   
+  <main>                                  
+    <section>                                               
+      <article><h3>Menu</h3>                                                              
+        <nav>                                                                           
+          <ul>                                                                                          
+            <li>                                                                                            
+            <a href="#uvod">Úvod</a>                                                                                          
+            </li>                                                                                         
+            <li>                                                                                            
+            <a href="#metodika">Metodika</a>                                                                                          
+            </li>                                                                                         
+            <li>                                                                                            
+            <a href="#elementy">Elementy & atributy</a>                                                                                         
+            </li>                                                                                         
+            <li>                                                                                            
+            <a href="#transformace">Transformace</a>                                                                                          
+            </li>                                                                                         
+            <li>                                                                                            
+            <a href="#zaver">Závěr</a>                                                                                          
+            </li>                                                                           
+          </ul>                                                             
+        </nav>                                                
+      </article>                                                
+      <article id="uvod"><h3>Úvod</h3>                                                              
         <p>Tato semestrální práce je vytvoření XML struktury pro 
         přeposílání dat objednávek na server a zapsání do databáze                                                  
         </p>        
@@ -39,14 +42,14 @@
         <p>XML slouží jako vzor struktury XML zprávy odesílané systémem na server, kde budou data zapisovány do databáze. 
         Element objednavky je soubor objednávek, které budou odeslány najednou, kvůli vytížení serveru
         Do něj se budou ukládat jednotlivé objednávky ve které jsou udáje o zákazníkovy, také zaměstnanci který objednávku vyřídil, kontakt na zákazníka, případně adresa bysliště.<br> Objednávka  obsahuje také seznam položek, které si zákazník objednává, údaje o platbě a dodání zboží
-        </p>			                                          
-      </article>			                                          
-      <article id="metodika"><h3>Metodika</h3>				                                                      
+        </p>                                                
+      </article>                                                
+      <article id="metodika"><h3>Metodika</h3>                                                              
         <p>
-        Jako první byl vytvořen XSD soubor, ve kterém bylo definováno co bude osbahovat XML soubor s daty, co bude povolené do něj zapisovat a určit celkovou strukturu. Potom byl vytvořen XML soubor v závislosti na XSD. XSLT soubor vypisuje data z XML souboru do HTML, a zobrazuje čitelné informace o všech objednávkách. Dokumentace o všech souborech, postupech a technikách je obsažen v HTML souboru, který právě čtete. HTML sobor je zvalidován na W3C. XSD je zvalidováno na  - http://www.utilities-online.info/xsdvalidation/ a XSLT na - http://www.freeformatter.com/xsl-transformer.html#ad-output. K´dování dokumentů je v UTF-8. Soubory byly editovány převážně v NetBeans a také v SublimeText                                                    
-        </p>			                                          
-      </article>			                                          
-      <article id="elementy"><h3>Elementy a atributy</h3>				                                                      
+        Jako první byl vytvořen XSD soubor, ve kterém bylo definováno co bude osbahovat XML soubor s daty, co bude povolené do něj zapisovat a určena celková struktura. Potom byl vytvořen XML soubor v závislosti na XSD. XML soubor byl naplněn daty, každý záznam obsahuje různá data,která mohou být dosazena. XML soubor je zvalidován XSDfile.xsd souborem. XSLT soubor vypisuje data z XML souboru do HTML, a zobrazuje čitelné informace o všech objednávkách v tabulkách. Dokumentace o všech souborech, postupech a technikách je obsažen v HTML souboru, který právě čtete. HTML sobor je zvalidován na W3C. XSD je zvalidováno na  - http://www.utilities-online.info/xsdvalidation/ a XSLT na - http://www.freeformatter.com/xsl-transformer.html#ad-output. K´dování dokumentů je v UTF-8. Soubory byly editovány převážně v NetBeans a také v SublimeText                                                    
+        </p>                                                
+      </article>                                                
+      <article id="elementy"><h3>Elementy a atributy</h3>                                                             
           <h4>Elementy</h4>
           <ol>
             <li>objednavky - soubor objednávek připraven k odeslání</li>
@@ -112,8 +115,8 @@
             <li>druh - druh objednávky</li>
             <li>verze - verze souboru</li>
           </ol>               
-      </article>			                                          
-      <article id="transformace"><h3>Transformace</h3>				                                                      
+      </article>                                                
+      <article id="transformace"><h3>Transformace</h3>                                                              
         <p>
         Cílem transformace bude vygenerovat HTML soubor s tabulkami, které bude přehledně zobrazovat jednotlivé zakázky a zákazníky. Zde uvádím pouze jednu část z transformace, jejíž plná forma je v souboru "HTML transformace.html".                                                     
         </p>
@@ -144,20 +147,21 @@
               <td>2016-05-15</td>
               <td>758985478</td>
            </tr>
-        </table>			                                          
-      </article>			                                          
-      <article id="zaver"><h3>Závěr</h3>				                                                      
+        </table>                                                
+      </article>                                                
+      <article id="zaver"><h3>Závěr</h3>                                                              
         <p>
-          SOubory nemohli být otestovány, neboť obchod a systém pro který slouží je fiktivní a neexistuje. Snažil jsem se zpracovat tyto soubory tak, aby vyhovoaly obecným požadavkům pro e-shopy, a obsahovali údaje, kterér se většinou používají v objednávkách. Soubory jsem zpracovával sám v legálním softwaru
-        </p>			                                          
+          Soubory nemohli být otestovány, neboť obchod a systém pro který slouží je fiktivní a neexistuje. Snažil jsem se zpracovat tyto soubory tak, aby vyhovoaly obecným požadavkům pro e-shopy, a obsahovali údaje, kterér se většinou používají v objednávkách. Soubory jsem zpracovával sám v legálním softwaru
+        </p>                                                
         <p>
           Transformace původního daty naplněného XML souboru, může posloužit k různým účelům vytváření reportů a přehledů. A to i přes to, že v souboru nebude nikdy příliš mnoho zakázek najednou, jelikož by se soubor měl, co nejdříve odeslat od zástupce do firmy na zpracování.
         </p>
-      </article>			                                          	                              
-    </section>	                  
-  </main>	 	                  
-  <footer>		                              
-    <p>Petr Kupka<br>Česká Zemědělská Univerzita,Provozně ekonomická fakulta, INFO <br>2017<br>                              
-    </p>	                  
+      </article>                                                                                
+    </section>                    
+  </main>                     
+  <footer>                                  
+    <p>Autor:Petr Kupka<br>Česká Zemědělská Univerzita<br> Provozně ekonomická fakulta <br> INFO <br>2017<br>                              
+    </p>                    
   </footer>
 </body>
+</html>
