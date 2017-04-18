@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:simpleType name="typePrice">
+        <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="200000"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    
+    <xs:simpleType name="typePlatbaPriPrevzeti">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ANO"/>
+            <xs:enumeration value="NE"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="typeNumber">
+        <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="100"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    
+
+    <xs:simpleType name="typeTravelling">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ppl"/>
+            <xs:enumeration value="dps"/>
+            <xs:enumeration value="ÈP"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:element name="objednavky">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="objednavka" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="xs:string" name="id_objednavky"/>
+                            <xs:element type="xs:date" name="vytvoreno"/>
+                            <xs:element type="xs:date" name="prevzato"/>
+                            <xs:element name="zamestnanec">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element type="xs:string" name="id_zamestnance"/>
+                                        <xs:element type="xs:string" name="jmeno"/>
+                                        <xs:element type="xs:string" name="prijmeni"/>
+                                    </xs:sequence>
+                                    <xs:attribute type="xs:string" name="id_zarizeni"/>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="zakaznik">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:choice>
+                                            <xs:element name="registrovany_zakaznik">
+                                                <xs:complexType>
+                                                    <xs:sequence>
+                                                        <xs:element name="id_zakaznika"/>
+                                                        <xs:element name="nickname"/>
+                                                        <xs:element name="heslo"/>
+                                                        <xs:element name="body"/>
+                                                    </xs:sequence>
+                                                </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="neregistrovany_zakaznik">
+                                                <xs:complexType>
+                                                    <xs:sequence>
+                                                        <xs:element type="xs:string" name="jmeno"/>
+                                                        <xs:element type="xs:string" name="prijmeni"/>
+                                                        <xs:element name="bydliste">
+                                                            <xs:complexType>
+                                                                <xs:sequence>
+                                                                    <xs:element type="xs:string" name="ulice"/>
+                                                                    <xs:element type="xs:string" name="cp"/>
+                                                                    <xs:element type="xs:string" name="psc"/>
+                                                                    <xs:element type="xs:string" name="mesto"/>
+                                                                </xs:sequence>
+                                                            </xs:complexType>
+                                                        </xs:element>
+                                                        <xs:element name="kontakt">
+                                                            <xs:complexType>
+                                                                <xs:sequence>
+                                                                    <xs:choice>
+                                                                        <xs:sequence>
+                                                                            <xs:element type="xs:string" name="tel_cislo" minOccurs="0" maxOccurs="1"/>
+                                                                            <xs:element type="xs:string" name="email" minOccurs="0" maxOccurs="1"/>
+                                                                        </xs:sequence>
+                                                                        <xs:sequence>
+                                                                            <xs:element type="xs:string" name="tel_cislo"/>
+                                                                            <xs:element type="xs:string" name="email" minOccurs="0" maxOccurs="1"/>
+                                                                        </xs:sequence>
+                                                                        <xs:sequence>
+                                                                            <xs:element type="xs:string" name="email"/>
+                                                                        </xs:sequence>
+                                                                    </xs:choice> 
+                                                                </xs:sequence>
+                                                            </xs:complexType>
+                                                        </xs:element>
+                                                        <xs:element type="xs:boolean" name="chce_registraci"/>
+                                                    </xs:sequence>
+                                                </xs:complexType>
+                                            </xs:element>
+                                        </xs:choice>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="polozky">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="polozka" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element type="xs:string" name="id_polozky"/>
+                                                    <xs:element type="xs:string" name="nazev"/>
+                                                    <xs:element type="xs:string" name="popis" minOccurs="0"/>
+                                                    <xs:element name="cena_za_kus"/>
+                                                    <xs:element type="typeNumber" name="pocet_kusu"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="dodaci_adresa" minOccurs="0" maxOccurs="1">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element type="xs:string" name="ulice"/>
+                                        <xs:element type="xs:string" name="cp"/>
+                                        <xs:element type="xs:string" name="psc"/>
+                                        <xs:element type="xs:string" name="mesto"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="prevzeti_objednavky">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:choice>
+                                            <xs:element name="na_pobocce">
+                                                <xs:complexType>
+                                                    <xs:sequence>
+                                                        <xs:element type="xs:string" name="pobocka"/>
+                                                        <xs:element type="xs:date" name="na_pobocce_do"/>
+                                                    </xs:sequence>
+                                                </xs:complexType>
+                                            </xs:element>
+                                            <xs:element type="typeTravelling" name="doprava"/>
+                                        </xs:choice>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="platba">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:choice>
+                                            <xs:element type="typePlatbaPriPrevzeti" name="platba_pri_prevzeti"/>
+                                            <xs:element name="prevodem">
+                                                <xs:complexType>
+                                                    <xs:sequence>
+                                                        <xs:element type="xs:string" name="ucet"/>
+                                                        <xs:element type="xs:string" name="bank_kod"/>
+                                                        <xs:element type="xs:string" name="var_symbol"/>
+                                                        <xs:element type="xs:string" name="poznamka" minOccurs="0" maxOccurs="1"/>
+                                                    </xs:sequence>
+                                                </xs:complexType>
+                                            </xs:element>
+                                            <xs:element type="xs:string" name="paypal_ucet"/> 
+                                        </xs:choice>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
