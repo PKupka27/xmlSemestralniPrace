@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<head>	                  
+  <title>Projekt - značkovací jazyky</title>
+</head>
+<body>	                  
+  <header><h1>Dokumentace semestrání práce</h1>	
+      <h2>Přeposílání objednávek</h2>                 
+  </header>	                  
+  <main>		                              
+    <section>			                                          
+      <article><h2>Menu</h2>				                                                      
+        <nav>					                                                                  
+          <ul>						                                                                              
+            <li>							                                                                              
+            <a href="#uvod">Úvod</a>						                                                                              
+            </li>						                                                                              
+            <li>							                                                                              
+            <a href="#metodika">Metodika</a>						                                                                              
+            </li>						                                                                              
+            <li>							                                                                              
+            <a href="#elementy">Elementy & atributy</a>						                                                                              
+            </li>						                                                                              
+            <li>							                                                                              
+            <a href="#transformace">Transformace</a>						                                                                              
+            </li>						                                                                              
+            <li>							                                                                              
+            <a href="#zaver">Závěr</a>						                                                                              
+            </li>					                                                                  
+          </ul>				                                                      
+        </nav>			                                          
+      </article>			                                          
+      <article id="uvod"><h2>Úvod</h2>				                                                      
+        <p>Tato semestrální práce je vytvoření XML struktury pro 
+        přeposílání dat objednávek na server a zapsání do databáze                                                  
+        </p>        
+        <p>Objednávky budou odesílány buď ze zaměstaneckých počítačů z poboček(objednávka v prodejně, nebo z eshopu
+          <br>Aby server nebyl vytížen, objednávky se posílají po více záznamech       
+        </p>
+        <p>XML slouží jako vzor struktury XML zprávy odesílané systémem na server, kde budou data zapisovány do databáze. 
+        Element objednavky je soubor objednávek, které budou odeslány najednou, kvůli vytížení serveru
+        Do něj se budou ukládat jednotlivé objednávky ve které jsou udáje o zákazníkovy, také zaměstnanci který objednávku vyřídil, kontakt na zákazníka, případně adresa bysliště.<br> Objednávka  obsahuje také seznam položek, které si zákazník objednává, údaje o platbě a dodání zboží
+        </p>			                                          
+      </article>			                                          
+      <article id="metodika"><h3>Metodika</h3>				                                                      
+        <p>
+        Jako první byl vytvořen XSD soubor, ve kterém bylo definováno co bude osbahovat XML soubor s daty, co bude povolené do něj zapisovat a určit celkovou strukturu. Potom byl vytvořen XML soubor v závislosti na XSD. XSLT soubor vypisuje data z XML souboru do HTML, a zobrazuje čitelné informace o všech objednávkách. Dokumentace o všech souborech, postupech a technikách je obsažen v HTML souboru, který právě čtete. HTML sobor je zvalidován na W3C. XSD je zvalidováno na  - http://www.utilities-online.info/xsdvalidation/ a XSLT na - http://www.freeformatter.com/xsl-transformer.html#ad-output. K´dování dokumentů je v UTF-8. Soubory byly editovány převážně v NetBeans a také v SublimeText                                                    
+        </p>			                                          
+      </article>			                                          
+      <article id="elementy"><h3>Elementy a atributy</h3>				                                                      
+          <h4>Elementy</h4>
+          <ol>
+            <li>objednavky - soubor objednávek připraven k odeslání</li>
+            <li>objednavka - objednávka zákazníka s potřebnými údaji</li>
+            <li>id_zakazky - jedinečné číslo objednávky pro orientaci v databázi </li>
+            <li>vytvoreno - datum vytvoření objednávky</li>
+            <li>prevzato - datum převzetí zákazníka od obchodu</li>
+            <li>zamestnanec - zaměstnanec, který vyrizuje objednavku a stara se o odeslani</li>
+            <li>id_zamestnance - jedinečné číslo zaměstnance</li>
+            <li>jmeno_zamestnance - jméno zaměstnance</li>
+            <li>prijmeni_zamestnance - příjmení zaměstnance</li>
+            <li>zakaznik - soubor se všemi úadji o zákazníkovi</li>
+            <li>neregistrovany_zakaznik - soubor údajů o neregistrovaném zákazníkovi</li>
+            <li>registrovany_zakaznik - soubor údajů o registrovaném zákazníkovi</li>
+            <li>jmeno_zakaznika - jméno zákazníka</li>
+            <li>prijmeni_zakaznika - příjmení zákazníka</li>
+            <li>bydliste - údaje o místě kde zákazník bydlí</li>
+            <li>ulice - jméno ulice</li>
+            <li>cp - číslo popisné</li>
+            <li>psc - poštovní směrovací číslo</li>
+            <li>mesto - město kde zákaznik bydlí</li>
+            <li>kontakt - kontaktní informace o zákazníkovi</li>
+            <li>telefon - telefonní číslo</li>
+            <li>email - emailová adresa</li>
+            <li>id_zakaznika - jedinečné číslo pro registrovaného zákazníka, pro orientaci v databázi</li>
+            <li>nickname - prihlasovaci jmeno zákazníka</li>
+            <li>heslo - heslo k účtu zákazníka</li>
+            <li>body - body registrovaného zákazníka, které lze využít obchodě pro různé slevy a další objednávky</li>
+            <li>polozky - soubor obsahující jednotlivé polozky</li>
+            <li>polozka - obsahuje údaje o objednané polozce</li>
+            <li>id_polozky - jedinečné číslo položky pro orientaci v databázi</li>
+            <li>nazev - jméno produktu</li>
+            <li>popis - popis položky</li>
+            <li>cena_za_kus - cena za jeden kus dané položky</li>
+            <li>pocet_kusu - počet objednaných kusů</li>
+            <li>dodaci_adresa - soubor obsahující údaje o adrese dodání, pokud si zákazník zvolí převzetí na pobočce, nemusí být adresa uvedena</li>
+            <li>ulice_dodani - nazev ulice na kterou má preprace dodat objednavku</li>
+            <li>cp_dodani - číslo popisné ulice na kterou má preprace dodat objednavku</li>
+            <li>psc_dodani - poštovní směrovací číslo města na kterou má přepravce dodat objednávku</li>
+            <li>mesto_dodani - mesto kam má přepravce dodat objednávku</li>
+            <li>prevzeti_objednavky - výběr způsobu převzetí objednávky</li>
+            <li>na_pobocce - zákazník vybere převzetí na pobočce</li>
+            <li>pobocka_prevzeti - pobočka na které si zákazník vyzvedne objednávku</li>
+            <li>na _pobocce_do - datum do kterého bude objednávka uschována na pobočce</li>
+            <li>doprava - způsob dopravy, pokud zákazník zvolí dodání zboží domů</li>
+            <li>platba - soubor obsahující údaje o platbě</li>
+            <li>platba_pri_prevzeti - zákazník zvolí platbu při převzetí zboží</li>
+            <li>prevodem - zákazník zvolí platbu převodem</li>
+            <li>ucet</li>
+            <li>bank_kod - kód banky</li>
+            <li>var_symbol - variabilní symbol</li>
+            <li>poznamka - poznámka k platbě (nemusí být uvedena)</li>
+            <li>paypal_ucet - nazev uctu pokud zákazník zvolí platbu pres paypal</li>
+
+
+          </ol>
+          <h4>Atributy</h4>
+          <ol>
+            <li>id_zarizeni - jedinečné číslo počítače na kterém byla vyřízena objednávka</li>
+            <li>pobocka - pobocka na které byla vyřízena objednávka</li>
+            <li>chce_registrovat - při prvním obchodu může zadat zákazník, že chce rvnou registrovat</li>
+            <li>mena - měna ve které bude platba uskutečněna</li>
+            <li>druh - druh objednávky</li>
+            <li>verze - verze souboru</li>
+          </ol>               
+      </article>			                                          
+      <article id="transformace"><h3>Transformace</h3>				                                                      
+        <p>
+        Cílem transformace bude vygenerovat HTML soubor s tabulkami, které bude přehledně zobrazovat jednotlivé zakázky a zákazníky. Zde uvádím pouze jednu část z transformace, jejíž plná forma je v souboru "HTML transformace.html".                                                     
+        </p>
+        <h2>Výpis zákazníků - právnických osob</h2>
+        <p>Z výpisu jsou odfiltrovány fyzické osoby a firmy, které nemají sídlo v České republice. Tabulka je seřazena podle zákaznického čísla.</p>
+        <table border="1">
+           <tr>
+              <th>Číslo zákazníka</th>
+              <th>Název společnosti</th>
+              <th>Sídlo</th>
+              <th>IČO</th>
+              <th>Datum objednávky</th>
+              <th>Kontakt</th>
+           </tr>
+           <tr>
+              <td>12</td>
+              <td>Stavby s.r.o.</td>
+              <td>Praha</td>
+              <td>78954258</td>
+              <td>2016-05-15</td>
+              <td>606777336</td>
+           </tr>
+           <tr>
+              <td>30</td>
+              <td>České stavby</td>
+              <td>Kladno</td>
+              <td>96854782</td>
+              <td>2016-05-15</td>
+              <td>758985478</td>
+           </tr>
+        </table>			                                          
+      </article>			                                          
+      <article id="zaver"><h3>Závěr</h3>				                                                      
+        <p>
+          SOubory nemohli být otestovány, neboť obchod a systém pro který slouží je fiktivní a neexistuje. Snažil jsem se zpracovat tyto soubory tak, aby vyhovoaly obecným požadavkům pro e-shopy, a obsahovali údaje, kterér se většinou používají v objednávkách. Soubory jsem zpracovával sám v legálním softwaru
+        </p>			                                          
+        <p>
+          Transformace původního daty naplněného XML souboru, může posloužit k různým účelům vytváření reportů a přehledů. A to i přes to, že v souboru nebude nikdy příliš mnoho zakázek najednou, jelikož by se soubor měl, co nejdříve odeslat od zástupce do firmy na zpracování.
+        </p>
+      </article>			                                          	                              
+    </section>	                  
+  </main>	 	                  
+  <footer>		                              
+    <p>Petr Kupka<br>Česká Zemědělská Univerzita,Provozně ekonomická fakulta, INFO <br>2017<br>                              
+    </p>	                  
+  </footer>
+</body>

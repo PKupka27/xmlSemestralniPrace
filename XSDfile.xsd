@@ -60,8 +60,8 @@
                                 <xs:complexType>
                                     <xs:sequence>
                                         <xs:element type="xs:string" name="id_zamestnance"/>
-                                        <xs:element type="xs:string" name="jmeno"/>
-                                        <xs:element type="xs:string" name="prijmeni"/>
+                                        <xs:element type="xs:string" name="jmeno_zamestnance"/>
+                                        <xs:element type="xs:string" name="prijmeni_zamestnance"/>
                                     </xs:sequence>
                                     <xs:attribute type="xs:string" name="id_zarizeni"/>
                                     <xs:attribute type="xs:string" name="pobocka"/>
@@ -84,8 +84,8 @@
                                             <xs:element name="neregistrovany_zakaznik">
                                                 <xs:complexType>
                                                     <xs:sequence>
-                                                        <xs:element type="xs:string" name="jmeno"/>
-                                                        <xs:element type="xs:string" name="prijmeni"/>
+                                                        <xs:element type="xs:string" name="jmeno_zakaznika"/>
+                                                        <xs:element type="xs:string" name="prijmeni_zakaznika"/>
                                                         <xs:element name="bydliste">
                                                             <xs:complexType>
                                                                 <xs:sequence>
@@ -144,10 +144,10 @@
                             <xs:element name="dodaci_adresa" minOccurs="0" maxOccurs="1">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element type="xs:string" name="ulice"/>
-                                        <xs:element type="xs:string" name="cp"/>
-                                        <xs:element type="xs:string" name="psc"/>
-                                        <xs:element type="xs:string" name="mesto"/>
+                                        <xs:element type="xs:string" name="ulice_dodani"/>
+                                        <xs:element type="xs:string" name="cp_dodani"/>
+                                        <xs:element type="xs:string" name="psc_dodani"/>
+                                        <xs:element type="xs:string" name="mesto_dodani"/>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>

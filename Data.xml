@@ -6,12 +6,12 @@
         <prevzato>2017-03-28</prevzato>
         <zamestnanec id_zarizeni="pc23" pobocka="Dejvicka">
             <id_zamestnance>27</id_zamestnance>
-            <jmeno>Petr</jmeno>
-            <prijmeni>Šilhavý</prijmeni>
+            <jmeno_zamestnance>Petr</jmeno_zamestnance>
+            <prijmeni_zamestnance>Šilhavý</prijmeni_zamestnance>
         </zamestnanec>
         <zakaznik>
             <registrovany_zakaznik>
-                <id_zakaznika>Stavby s.r.o.</id_zakaznika>
+                <id_zakaznika>123</id_zakaznika>
                 <nickname>Jubla</nickname>
                 <heslo>********</heslo>
                 <body>345</body>
@@ -26,10 +26,10 @@
             </polozka>
         </polozky>
         <dodaci_adresa>
-            <ulice>Dejvická</ulice>
-            <cp>900</cp>
-            <psc>41020</psc>
-            <mesto>Praha</mesto>
+            <ulice_dodani>Dejvická</ulice_dodani>
+            <cp_dodani>900</cp_dodani>
+            <psc_dodani>41020</psc_dodani>
+            <mesto_dodani>Praha</mesto_dodani>
         </dodaci_adresa>
         <prevzeti_objednavky>
             <doprava>ppl</doprava>
@@ -45,13 +45,13 @@
         <prevzato>2017-05-15</prevzato>
         <zamestnanec id_zarizeni="pc23"  pobocka="Dejvicka">
             <id_zamestnance>27</id_zamestnance>
-            <jmeno>Petr</jmeno>
-            <prijmeni>Šilhavý</prijmeni>
+            <jmeno_zamestnance>Petr</jmeno_zamestnance>
+            <prijmeni_zamestnance>Šilhavý</prijmeni_zamestnance>
         </zamestnanec>
         <zakaznik>
             <neregistrovany_zakaznik chce_registrovat="false">
-                <jmeno>Prokop</jmeno>
-                <prijmeni>Buben</prijmeni>
+                <jmeno_zakaznika>Prokop</jmeno_zakaznika>
+                <prijmeni_zakaznika>Buben</prijmeni_zakaznika>
                 <bydliste>
                     <ulice>Hradčanská</ulice>
                     <cp>709</cp>
@@ -80,7 +80,7 @@
         </polozky>
         <prevzeti_objednavky>
             <na_pobocce>
-                <pobocka>Dejvická</pobocka>
+                <pobocka_prevzeti>Dejvická</pobocka_prevzeti>
                 <na_pobocce_do>2017-05-23</na_pobocce_do>
             </na_pobocce>
         </prevzeti_objednavky>
@@ -99,8 +99,8 @@
         <prevzato>2017-01-18</prevzato>
         <zamestnanec id_zarizeni="pc09"  pobocka="Modrany">
             <id_zamestnance>05</id_zamestnance>
-            <jmeno>Zdeněk</jmeno>
-            <prijmeni>Zdvihal</prijmeni>
+            <jmeno_zamestnance>Zdeněk</jmeno_zamestnance>
+            <prijmeni_zamestnance>Zdvihal</prijmeni_zamestnance>
         </zamestnanec>
         <zakaznik>
             <registrovany_zakaznik>
@@ -125,10 +125,10 @@
             </polozka>
         </polozky>
         <dodaci_adresa>
-            <ulice>Družstevní</ulice>
-            <cp>326</cp>
-            <psc>41390</psc>
-            <mesto>Litoměřice</mesto>
+            <ulice_dodani>Družstevní</ulice_dodani>
+            <cp_dodani>326</cp_dodani>
+            <psc_dodani>41390</psc_dodani>
+            <mesto_dodani>Litoměřice</mesto_dodani>
         </dodaci_adresa>
         <prevzeti_objednavky>
             <doprava>ČP</doprava>
@@ -144,13 +144,13 @@
         <prevzato>2016-05-19</prevzato>
         <zamestnanec id_zarizeni="pc12"  pobocka="Modrany">
             <id_zamestnance>10</id_zamestnance>
-            <jmeno>Aleš</jmeno>
-            <prijmeni>Nový</prijmeni>
+            <jmeno_zamestnance>Aleš</jmeno_zamestnance>
+            <prijmeni_zamestnance>Nový</prijmeni_zamestnance>
         </zamestnanec>
         <zakaznik>
             <neregistrovany_zakaznik chce_registrovat="true">
-                <jmeno>Josef</jmeno>
-                <prijmeni>Pešo</prijmeni>
+                <jmeno_zakaznika>Josef</jmeno_zakaznika>
+                <prijmeni_zakaznika>Pešo</prijmeni_zakaznika>
                 <bydliste>
                     <ulice>Palackého</ulice>
                     <cp>989</cp>
@@ -184,7 +184,7 @@
         </polozky>
         <prevzeti_objednavky>
             <na_pobocce>
-                <pobocka>Modřany</pobocka>
+                <pobocka_prevzeti>Modřany</pobocka_prevzeti>
                 <na_pobocce_do>2017-06-02</na_pobocce_do>
             </na_pobocce>
         </prevzeti_objednavky>
@@ -203,8 +203,8 @@
         <prevzato>2017-06-26</prevzato>
         <zamestnanec id_zarizeni="pc10"  pobocka="Modrany">
             <id_zamestnance>10</id_zamestnance>
-            <jmeno>Aleš</jmeno>
-            <prijmeni>Nový</prijmeni>
+            <jmeno_zamestnance>Aleš</jmeno_zamestnance>
+            <prijmeni_zamestnance>Nový</prijmeni_zamestnance>
         </zamestnanec>
         <zakaznik>
             <registrovany_zakaznik>
@@ -229,10 +229,10 @@
             </polozka>
         </polozky>
         <dodaci_adresa>
-            <ulice>Alšova</ulice>
-            <cp>578</cp>
-            <psc>41167</psc>
-            <mesto>Beroun</mesto>
+            <ulice_dodani>Alšova</ulice_dodani>
+            <cp_dodani>578</cp_dodani>
+            <psc_dodani>41167</psc_dodani>
+            <mesto_dodani>Beroun</mesto_dodani>
         </dodaci_adresa>
         <prevzeti_objednavky>
             <doprava>ppl</doprava>
