@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+    <xsl:output method="html"/>
+    <xsl:template match="/objednavky">
+        
+        <head>                    
+            <title>Projekt - značkovací jazyky</title>
+            <meta charset="UTF-8"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        </head>
+        <body>
+            <h1>XSL Transformace</h1>
+            <p>Cílem transformace bude vygenerovat HTML soubor s tabulkami, které budou přehledně zobrazovat jednotlivé zákazníky a jejich zakázky.</p>   
+            <h2>Výpis registrovaných zákazníků</h2>
+            <table border="1">
+                <tr>
+                    <th>ID</th>
+                    <th>Nick</th>
+                    <th>Body</th>
+                </tr>
+                <xsl:for-each select="objednavka">
+                    <xsl:choose>
+                        <xsl:when test="zakaznik/registrovany_zakaznik">
+                            <tr>
+                                <td>
+                                    <xsl:value-of select="zakaznik/registrovany_zakaznik/id_zakaznika"/>
+                                </td>
+                                <td>
+                                    <xsl:value-of select="zakaznik/registrovany_zakaznik/nickname"/>
+                                </td>
+                                <td>
+                                    <xsl:value-of select="zakaznik/registrovany_zakaznik/body"/>
+                                </td>                                            
+                            </tr>
+                        </xsl:when>
+                    </xsl:choose>
+                </xsl:for-each>
+            </table>     
+            <h2>Výpis neregistrovaných zákazníků</h2>
+            <table border="1">
+                <tr>
+                    <th>Jméno</th>
+                    <th>Příjmení</th>
+                    <th>Bydliště</th>
+                    <th>email</th>
+                </tr>
+                <xsl:for-each select="objednavka">
+                    <xsl:choose>
+                        <xsl:when test="zakaznik/neregistrovany_zakaznik">
+                            <tr>
+                                <td>
+                                    <xsl:value-of select="zakaznik/neregistrovany_zakaznik/jmeno_zakaznika"/>
+                                </td>
+                                <td>
+                                    <xsl:value-of select="zakaznik/neregistrovany_zakaznik/prijmeni_zakaznika"/>
+                                </td>
+                                <td>
+                                    <xsl:value-of select="zakaznik/neregistrovany_zakaznik/bydliste/ulice"/>&#160;
+                                    <xsl:value-of select="zakaznik/neregistrovany_zakaznik/bydliste/cp"/>,&#160;
+                                    <xsl:value-of select="zakaznik/neregistrovany_zakaznik/bydliste/mesto"/> 
+                                </td>
+                                <td>
+                                    <xsl:value-of select="zakaznik/neregistrovany_zakaznik/kontakt/email"/>
+                                </td>                                            
+                            </tr>
+                        </xsl:when>
+                    </xsl:choose>
+                </xsl:for-each>
+            </table>  
+            <h2>Výpis objednaného zboží</h2>
+            <table border="1">
+                <tr>
+                    <th>ID polozky</th>
+                    <th>Nazev</th>
+                    <th>Objednáno kusů</th>
+                </tr>
+                <xsl:for-each select="objednavka/polozky/polozka">
+                    <tr>
+                        <td>
+                            <xsl:value-of select="id_polozky"/>
+                        </td>
+                        <td>
+                            <xsl:value-of select="nazev"/>
+                        </td>
+                        <td>
+                            <xsl:value-of select="pocet_kusu"/>
+                        </td>                                          
+                    </tr>                 
+                </xsl:for-each>
+            </table>     
+        </body>               
+    </xsl:template>
+</xsl:stylesheet>

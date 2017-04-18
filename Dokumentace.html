@@ -7,7 +7,7 @@
 </head>
 <body>                    
   <header><h1>Dokumentace semestrání práce</h1> 
-      <h2>Přeposílání objednávek</h2>                 
+      <h2>Posílání objednávek na server</h2>                 
   </header>                   
   <main>                                  
     <section>                                               
@@ -19,7 +19,10 @@
             </li>                                                                                         
             <li>                                                                                            
             <a href="#metodika">Metodika</a>                                                                                          
-            </li>                                                                                         
+            </li> 
+            <li>                                                                                            
+            <a href="#soubory">Seznam souborů</a>                                                                                         
+            </li>                                                                                        
             <li>                                                                                            
             <a href="#elementy">Elementy & atributy</a>                                                                                         
             </li>                                                                                         
@@ -34,21 +37,30 @@
       </article>                                                
       <article id="uvod"><h3>Úvod</h3>                                                              
         <p>Tato semestrální práce je vytvoření XML struktury pro 
-        přeposílání dat objednávek na server a zapsání do databáze                                                  
+        posílání dat na server a zapsání do databáze pro obchod s hudebninami. Obchod má kamenné prodejny a také eshop.                                                  
         </p>        
-        <p>Objednávky budou odesílány buď ze zaměstaneckých počítačů z poboček(objednávka v prodejně, nebo z eshopu
+        <p>Objednávky budou odesílány buď ze zaměstaneckých počítačů z poboček(objednávka v prodejně) nebo z eshopu
           <br>Aby server nebyl vytížen, objednávky se posílají po více záznamech       
         </p>
         <p>XML slouží jako vzor struktury XML zprávy odesílané systémem na server, kde budou data zapisovány do databáze. 
-        Element objednavky je soubor objednávek, které budou odeslány najednou, kvůli vytížení serveru
-        Do něj se budou ukládat jednotlivé objednávky ve které jsou udáje o zákazníkovy, také zaměstnanci který objednávku vyřídil, kontakt na zákazníka, případně adresa bysliště.<br> Objednávka  obsahuje také seznam položek, které si zákazník objednává, údaje o platbě a dodání zboží
+        Element objednavky je soubor objednávek, které budou odeslány najednou kvůli vytížení serveru.
+        Do něj se budou ukládat jednotlivé objednávky ve které jsou udáje o zákazníkovy, také zaměstnanci, který objednávku vyřídil, kontakt na zákazníka, případně adresa bysliště.<br> Objednávka  obsahuje také seznam položek, které si zákazník objednává, údaje o platbě a dodání zboží.
         </p>                                                
       </article>                                                
       <article id="metodika"><h3>Metodika</h3>                                                              
         <p>
-        Jako první byl vytvořen XSD soubor, ve kterém bylo definováno co bude osbahovat XML soubor s daty, co bude povolené do něj zapisovat a určena celková struktura. Potom byl vytvořen XML soubor v závislosti na XSD. XML soubor byl naplněn daty, každý záznam obsahuje různá data,která mohou být dosazena. XML soubor je zvalidován XSDfile.xsd souborem. XSLT soubor vypisuje data z XML souboru do HTML, a zobrazuje čitelné informace o všech objednávkách v tabulkách. Dokumentace o všech souborech, postupech a technikách je obsažen v HTML souboru, který právě čtete. HTML sobor je zvalidován na W3C. XSD je zvalidováno na  - http://www.utilities-online.info/xsdvalidation/ a XSLT na - http://www.freeformatter.com/xsl-transformer.html#ad-output. K´dování dokumentů je v UTF-8. Soubory byly editovány převážně v NetBeans a také v SublimeText                                                    
+        Jako první byl vytvořen XSD soubor, ve kterém bylo definováno co bude osbahovat XML soubor s daty, co bude povolené do něj zapisovat a určena celková struktura. Potom byl vytvořen XML soubor v závislosti na XSD. XML soubor byl naplněn daty, každý záznam obsahuje různá data, která mohou být dosazena. XML soubor je zvalidován XSDfile.xsd souborem. XSLT soubor vypisuje data z XML souboru do HTML, a zobrazuje čitelné informace o všech zákaznících a objednávkách v tabulkách. Dokumentace o všech souborech, postupech a technikách je obsažen v HTML souboru, který právě čtete. HTML sobor je zvalidován na W3C. XSD je zvalidováno na  - http://www.utilities-online.info/xsdvalidation/ a XSLT na - http://www.freeformatter.com/xsl-transformer.html#ad-output. K´dování dokumentů je v UTF-8. Soubory byly editovány převážně v NetBeans a také v SublimeText                                                    
         </p>                                                
-      </article>                                                
+      </article> 
+      <article id="soubory"><h3>Seznam souborů</h3> 
+          <ol>
+            <li>Data.xml - hlavní soubor s daty, xml struktura</li>
+            <li>XSDfile.xsd - xsd soubor, který validuje xml soubor s daty</li>
+            <li>XSLT_file - XSL soubor, který transformuje Data.xml do html souboru s přehlednými tabulkami obsahující údaje o objednávkách a zákaznících</li>
+            <li>Transofrmovane_XML - výsledek transformace z Data.xml, html soubor zobrazující údaje v tabulkách</li>
+            <li>Dokumentace.html - html soubor obsahující popis celého projektu, ukázky transformace, seznam elemtů, atributů a souborů, které projekt obsahuje a metodiku</li>
+          </ol>               
+      </article>                                               
       <article id="elementy"><h3>Elementy a atributy</h3>                                                             
           <h4>Elementy</h4>
           <ol>
@@ -118,43 +130,53 @@
       </article>                                                
       <article id="transformace"><h3>Transformace</h3>                                                              
         <p>
-        Cílem transformace bude vygenerovat HTML soubor s tabulkami, které bude přehledně zobrazovat jednotlivé zakázky a zákazníky. Zde uvádím pouze jednu část z transformace, jejíž plná forma je v souboru "HTML transformace.html".                                                     
+        Transformace vygeneruje HTML soubor s tabulkami, které budou přehledně zobrazovat jednotlivé zákazníky a objednávky. Transformace bude obsahovat následující tabulky (tyto ukázky mají jen jeden záznam, všechny záznamy lze zobrazit v souboru Transformovane_XML.html, což je výstupem XSL transformace ze souboru Data.xml )                                                    
         </p>
-        <h2>Výpis zákazníků - právnických osob</h2>
-        <p>Z výpisu jsou odfiltrovány fyzické osoby a firmy, které nemají sídlo v České republice. Tabulka je seřazena podle zákaznického čísla.</p>
-        <table border="1">
-           <tr>
-              <th>Číslo zákazníka</th>
-              <th>Název společnosti</th>
-              <th>Sídlo</th>
-              <th>IČO</th>
-              <th>Datum objednávky</th>
-              <th>Kontakt</th>
-           </tr>
-           <tr>
-              <td>12</td>
-              <td>Stavby s.r.o.</td>
-              <td>Praha</td>
-              <td>78954258</td>
-              <td>2016-05-15</td>
-              <td>606777336</td>
-           </tr>
-           <tr>
-              <td>30</td>
-              <td>České stavby</td>
-              <td>Kladno</td>
-              <td>96854782</td>
-              <td>2016-05-15</td>
-              <td>758985478</td>
-           </tr>
-        </table>                                                
+        <h4>Výpis registrovaných zákazníků</h4>
+            <table border="1">
+                <tr>
+                    <th>ID</th>
+                    <th>Nick</th>
+                    <th>Body</th>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>prikladNick</td>
+                    <td>365</td>                                            
+                </tr>                       
+            </table> 
+            <h4>Výpis neregistrovaných zákazníků</4>
+            <table border="1">
+                <tr>
+                    <th>Jméno</th>
+                    <th>Příjmení</th>
+                    <th>Bydliště</th>
+                    <th>email</th>
+                </tr>
+                <tr>
+                  <td>Robert</td>
+                  <td>Jebavý</td>
+                  <td>Ulicová 899, Brno</td>
+                  <td>jebavEm@email.com</td>                                            
+                </tr>                     
+            </table>  
+            <h4>Výpis objednaného zboží</h4>
+            <table border="1">
+                <tr>
+                    <th>ID polozky</th>
+                    <th>Nazev</th>
+                    <th>Objednáno kusů</th>
+                </tr>
+                <tr>
+                  <td>56</td>
+                  <td>Polozka 1</td>
+                  <td>3</td>                                            
+                </tr>  
+            </table>                                                             
       </article>                                                
       <article id="zaver"><h3>Závěr</h3>                                                              
         <p>
-          Soubory nemohli být otestovány, neboť obchod a systém pro který slouží je fiktivní a neexistuje. Snažil jsem se zpracovat tyto soubory tak, aby vyhovoaly obecným požadavkům pro e-shopy, a obsahovali údaje, kterér se většinou používají v objednávkách. Soubory jsem zpracovával sám v legálním softwaru
-        </p>                                                
-        <p>
-          Transformace původního daty naplněného XML souboru, může posloužit k různým účelům vytváření reportů a přehledů. A to i přes to, že v souboru nebude nikdy příliš mnoho zakázek najednou, jelikož by se soubor měl, co nejdříve odeslat od zástupce do firmy na zpracování.
+          Soubory nemohli být otestovány na serveru a v databázi, neboť obchod a systém pro který slouží je fiktivní a neexistuje. Snažil jsem se zpracovat tyto soubory tak, aby vyhovoaly obecným požadavkům pro e-shopy, a obsahovali údaje, které se většinou používají v objednávkách. Soubory jsem zpracovával sám v legálním softwaru. Soubory jsou určeny v podstatě pro jakýkoli obchod , který by potřeboval manipulovat s daty, zasílat je do databáze a zpracovávat je. Transformace xml souboru s daty slouží jako přehlednější sobor,který se dá spustit v prohlížeči a vpřehledných tabulkách můžeme vidět jednotlivé zákazníky a objednávky. 
         </p>
       </article>                                                                                
     </section>                    
