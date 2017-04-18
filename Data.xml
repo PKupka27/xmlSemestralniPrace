@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<objednavky  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="XSD_file.xsd">
-    <objednavka>
+<objednavky  verze="1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="XSDfile.xsd">
+    <objednavka druh="e_shop">
         <id_objednavky>1</id_objednavky>
         <vytvoreno>2017-03-27</vytvoreno>
         <prevzato>2017-03-28</prevzato>
-        <zamestnanec id_zarizeni="pc23">
+        <zamestnanec id_zarizeni="pc23" pobocka="Dejvicka">
             <id_zamestnance>27</id_zamestnance>
             <jmeno>Petr</jmeno>
-            <prijmeni>äilhav˝</prijmeni>
+            <prijmeni>≈†ilhav√Ω</prijmeni>
         </zamestnanec>
         <zakaznik>
             <registrovany_zakaznik>
@@ -26,7 +26,7 @@
             </polozka>
         </polozky>
         <dodaci_adresa>
-            <ulice>Dejvick·</ulice>
+            <ulice>Dejvick√°</ulice>
             <cp>900</cp>
             <psc>41020</psc>
             <mesto>Praha</mesto>
@@ -34,26 +34,26 @@
         <prevzeti_objednavky>
             <doprava>ppl</doprava>
         </prevzeti_objednavky>
-        <platba>
+        <platba mena="CZK">
             <platba_pri_prevzeti>ANO</platba_pri_prevzeti>
         </platba>
     </objednavka>
 
-    <objednavka>
+    <objednavka druh="e_shop">
         <id_objednavky>2</id_objednavky>
         <vytvoreno>2017-05-09</vytvoreno>
         <prevzato>2017-05-15</prevzato>
-        <zamestnanec id_zarizeni="pc23">
+        <zamestnanec id_zarizeni="pc23"  pobocka="Dejvicka">
             <id_zamestnance>27</id_zamestnance>
             <jmeno>Petr</jmeno>
-            <prijmeni>äilhav˝</prijmeni>
+            <prijmeni>≈†ilhav√Ω</prijmeni>
         </zamestnanec>
         <zakaznik>
-            <neregistrovany_zakaznik>
+            <neregistrovany_zakaznik chce_registrovat="false">
                 <jmeno>Prokop</jmeno>
                 <prijmeni>Buben</prijmeni>
                 <bydliste>
-                    <ulice>HradËansk·</ulice>
+                    <ulice>Hradƒçansk√°</ulice>
                     <cp>709</cp>
                     <psc>41020</psc>
                     <mesto>Praha</mesto>
@@ -62,7 +62,6 @@
                     <tel_cislo>777898567</tel_cislo>
                     <email>asdlkj@email.com</email>
                 </kontakt>
-                <chce_registraci>true</chce_registraci>
             </neregistrovany_zakaznik>
         </zakaznik>
         <polozky>
@@ -81,11 +80,11 @@
         </polozky>
         <prevzeti_objednavky>
             <na_pobocce>
-                <pobocka>Dejvick·</pobocka>
+                <pobocka>Dejvick√°</pobocka>
                 <na_pobocce_do>2017-05-23</na_pobocce_do>
             </na_pobocce>
         </prevzeti_objednavky>
-        <platba>
+        <platba mena="CZK">
             <prevodem>
                 <ucet>898009644</ucet>
                 <bank_kod>0600</bank_kod>
@@ -94,13 +93,13 @@
         </platba>
     </objednavka>
 
-    <objednavka>
+    <objednavka druh="e_shop">
         <id_objednavky>3</id_objednavky>
         <vytvoreno>2017-01-11</vytvoreno>
         <prevzato>2017-01-18</prevzato>
-        <zamestnanec id_zarizeni="pc09">
+        <zamestnanec id_zarizeni="pc09"  pobocka="Modrany">
             <id_zamestnance>05</id_zamestnance>
-            <jmeno>ZdenÏk</jmeno>
+            <jmeno>Zdenƒõk</jmeno>
             <prijmeni>Zdvihal</prijmeni>
         </zamestnanec>
         <zakaznik>
@@ -126,34 +125,34 @@
             </polozka>
         </polozky>
         <dodaci_adresa>
-            <ulice>DruûstevnÌ</ulice>
+            <ulice>Dru≈æstevn√≠</ulice>
             <cp>326</cp>
             <psc>41390</psc>
-            <mesto>LitomÏ¯ice</mesto>
+            <mesto>Litomƒõ≈ôice</mesto>
         </dodaci_adresa>
         <prevzeti_objednavky>
-            <doprava>»P</doprava>
+            <doprava>ƒåP</doprava>
         </prevzeti_objednavky>
-        <platba>
+        <platba mena="CZK">
             <paypal_ucet>45676</paypal_ucet>
         </platba>
     </objednavka>
 
-    <objednavka>
+    <objednavka  druh="e_shop">
         <id_objednavky>4</id_objednavky>
         <vytvoreno>2016-05-18</vytvoreno>
         <prevzato>2016-05-19</prevzato>
-        <zamestnanec id_zarizeni="pc12">
+        <zamestnanec id_zarizeni="pc12"  pobocka="Modrany">
             <id_zamestnance>10</id_zamestnance>
-            <jmeno>Aleö</jmeno>
-            <prijmeni>Nov˝</prijmeni>
+            <jmeno>Ale≈°</jmeno>
+            <prijmeni>Nov√Ω</prijmeni>
         </zamestnanec>
         <zakaznik>
-            <neregistrovany_zakaznik>
+            <neregistrovany_zakaznik chce_registrovat="true">
                 <jmeno>Josef</jmeno>
-                <prijmeni>Peöo</prijmeni>
+                <prijmeni>Pe≈°o</prijmeni>
                 <bydliste>
-                    <ulice>PalackÈho</ulice>
+                    <ulice>Palack√©ho</ulice>
                     <cp>989</cp>
                     <psc>41019</psc>
                     <mesto>Praha</mesto>
@@ -161,7 +160,6 @@
                 <kontakt>
                     <email>asdlkj@email.com</email>
                 </kontakt>
-                <chce_registraci>false</chce_registraci>
             </neregistrovany_zakaznik>
         </zakaznik>
         <polozky>
@@ -186,11 +184,11 @@
         </polozky>
         <prevzeti_objednavky>
             <na_pobocce>
-                <pobocka>Mod¯any</pobocka>
+                <pobocka>Mod≈ôany</pobocka>
                 <na_pobocce_do>2017-06-02</na_pobocce_do>
             </na_pobocce>
         </prevzeti_objednavky>
-        <platba>
+        <platba mena="CZK">
             <prevodem>
                 <ucet>89893697</ucet>
                 <bank_kod>0700</bank_kod>
@@ -199,14 +197,14 @@
         </platba>
     </objednavka>
 
-    <objednavka>
+    <objednavka  druh="e_shop">
         <id_objednavky>5</id_objednavky>
         <vytvoreno>2017-06-23</vytvoreno>
         <prevzato>2017-06-26</prevzato>
-        <zamestnanec id_zarizeni="pc10">
+        <zamestnanec id_zarizeni="pc10"  pobocka="Modrany">
             <id_zamestnance>10</id_zamestnance>
-            <jmeno>Aleö</jmeno>
-            <prijmeni>Nov˝</prijmeni>
+            <jmeno>Ale≈°</jmeno>
+            <prijmeni>Nov√Ω</prijmeni>
         </zamestnanec>
         <zakaznik>
             <registrovany_zakaznik>
@@ -231,7 +229,7 @@
             </polozka>
         </polozky>
         <dodaci_adresa>
-            <ulice>Aöova</ulice>
+            <ulice>Al≈°ova</ulice>
             <cp>578</cp>
             <psc>41167</psc>
             <mesto>Beroun</mesto>
@@ -239,7 +237,8 @@
         <prevzeti_objednavky>
             <doprava>ppl</doprava>
         </prevzeti_objednavky>
-        <platba>
+        <platba mena="CZK">
             <paypal_ucet>Utecy</paypal_ucet>
         </platba>
     </objednavka>
+</objednavky>

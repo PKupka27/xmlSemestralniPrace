@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-    <xs:simpleType name="typePrice">
-        <xs:restriction base="xs:decimal">
-            <xs:minInclusive value="0"/>
-            <xs:maxInclusive value="200000"/>
+    <xs:simpleType name="typeVersion">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="1.0"/>
+            <xs:enumeration value="1.1"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="typeDruh">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="na_pobocce"/>
+            <xs:enumeration value="e_shop"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="typeCurrency">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="CZK"/>
+            <xs:enumeration value="EUR"/>
         </xs:restriction>
     </xs:simpleType>
 
@@ -29,7 +43,7 @@
         <xs:restriction base="xs:string">
             <xs:enumeration value="ppl"/>
             <xs:enumeration value="dps"/>
-            <xs:enumeration value="ÈP"/>
+            <xs:enumeration value="ÄŒP"/>
         </xs:restriction>
     </xs:simpleType>
 
@@ -50,6 +64,7 @@
                                         <xs:element type="xs:string" name="prijmeni"/>
                                     </xs:sequence>
                                     <xs:attribute type="xs:string" name="id_zarizeni"/>
+                                    <xs:attribute type="xs:string" name="pobocka"/>
                                 </xs:complexType>
                             </xs:element>
                             <xs:element name="zakaznik">
@@ -100,9 +115,10 @@
                                                                 </xs:sequence>
                                                             </xs:complexType>
                                                         </xs:element>
-                                                        <xs:element type="xs:boolean" name="chce_registraci"/>
                                                     </xs:sequence>
+                                                    <xs:attribute type="xs:boolean" name="chce_registrovat"/>
                                                 </xs:complexType>
+                                                
                                             </xs:element>
                                         </xs:choice>
                                     </xs:sequence>
@@ -170,13 +186,16 @@
                                             <xs:element type="xs:string" name="paypal_ucet"/> 
                                         </xs:choice>
                                     </xs:sequence>
+                                    <xs:attribute type="typeCurrency" name="mena"/>
                                 </xs:complexType>
                             </xs:element>
                             
                         </xs:sequence>
+                        <xs:attribute type="typeDruh" name="druh"/>
                     </xs:complexType>
                 </xs:element>
             </xs:sequence>
+            <xs:attribute type="typeVersion" name="verze"/>
         </xs:complexType>
     </xs:element>
 </xs:schema>
